@@ -3,7 +3,6 @@ btnEnviar.addEventListener("click", calcular)
 let resposta = ''
 
 function calcular(){
-    resposta = ""
 
     let input1 = document.getElementById('n1')
 
@@ -11,8 +10,14 @@ function calcular(){
 
     let n1 = input1.value
 
-    for(let i = 1; i < 11; i++){
+    resposta = ""
+
+    if(n1 <=10 && n1 > 0){
+    for(let i = 1; i <= 10; i++){
         resposta += `${n1} x ${i} = ${n1 * i}. \n`
     }
     resp.innerText = `${resposta}`
+    } else {
+        alert("Esse número não está disponível. Digite outro número !")
+    }
 }
